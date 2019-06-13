@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="slide.js"></script>
+    <script src="ig.js"></script>
+    <script type="text/javascript" src="https://cdn.shurimages.com/js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.instagramFeed.min.js"></script>
+    <title>你的命定 Ora² me</title>
+</head>
+
+<body>
+    <!-- 首屏 -->
+    <div class="jump_layer" id="jumpLayer"></div>
+    <div class="wrap">
+        <input type="checkbox" name="" id="menu_control">
+        <div class="header">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </h1>
+            <label for="menu_control" class="menu_btn">
+                <span>選單</span>
+            </label>
+            <nav>
+                <a href="#product_wrap" class="pc_h3 darkGray menu_hover" id="test">產品介紹</a>
+                <a href="#qa_wrap" class="pc_h3 darkGray menu_hover">體驗拿好禮</a>
+                <a href="#ig_intro" class="border-none pc_h3 darkGray menu_hover">超有型募集活動</a>
+            </nav>
+        </div>
+    </div>
+    <div class="wrap banner-wrap">
+        <div class="banner"></div>
+    </div> 
+    <!-- 以上為首屏 -->
+
+    <!-- 第二屏 -->
+    <div class="qa_banner_wrap" id="qa_wrap">
+        <div class="qa_part">
+            <div class="qa_item_flex">
+                <div class="qa_item" >
+                    <div class="qa_item_des" id="qa_item">
+                        <h2 class="mb_h1 grayPink qa_title">齒白體驗</br>my ora2 my style</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <p class="mb_h4 darkGray qa_des">立即檢測，找到專屬你的 Ora² me，</br>
+                            還有多項獎品等你抽!
+                        </p>
+                    </div>
+                    <!-- 點按第一題 -->
+                    <div class="qa_item_des" id="qOne">
+                        <h2 class="mb_h1 grayPink qa_title">1. 你偏好使用哪種刷毛牙刷?</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="中性毛" onclick="showTwo()" class="qaqa_btn qaqa_btn_white ">
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="軟性毛" onclick="showTwo()" class="qaqa_btn lightGrayText" >
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="超軟毛" onclick="showTwo()" class="qaqa_btn qaqa_btn_white">
+                        </div>
+                    </div>
+                    <!-- 以上為點按第一題 -->
+
+                    <!-- 點按第二題 -->
+                     <div class="qa_item_des" id="qTwo">
+                        <h2 class="mb_h1 grayPink qa_title">2. 刷牙時，</br>
+                                你最在意哪個地方沒刷乾淨 ?</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="齒面" onclick="showThree()" class="qaqa_btn qaqa_btn_white">
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="齒縫" onclick="showThree()" class="qaqa_btn lightGrayText" >
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="臼齒與牙齒後方" onclick="showThree()" class="qaqa_btn qaqa_btn_white">
+                        </div>
+                        <div class="qaqaqa_btn">
+                                <input type="button" value="齒漬" onclick="showThree()" class="qaqa_btn lightGrayText">
+                        </div>
+                    </div>
+                    <!-- 以上為點按第二題 -->
+
+                     <!-- 點按第三題 -->
+                     <div class="qa_item_des" id="qThree">
+                        <h2 class="mb_h1 grayPink qa_title">3. 你覺得使用，</br>
+                                小刷頭牙刷有什麼好處?</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="可以仔細徹底清潔牙齒" onclick="showFour()" class="qaqa_btn qaqa_btn_white" id="qa_btn_one">
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="輕鬆刷到臼齒及牙齒後方" onclick="showFour()" class="qaqa_btn  lightGrayText" id="qa_btn_two" >
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="不會撞到牙齦" onclick="showFour()" class="qaqa_btn qaqa_btn_white">
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="沒用過，不太清楚" onclick="showFour()" class="qaqa_btn lightGrayText">
+                        </div>
+                    </div>
+                    <!-- 以上為點按第三題 -->
+
+                    <!-- 點按第四題 -->
+                    <div class="qa_item_des" id="qFour">
+                        <h2 class="mb_h1 grayPink qa_title">4. 你想感受</br>
+                            刷完牙的齒面光滑感嗎?</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="想。牙齒光滑，笑起來更自信。" onclick="showIntro()" class="qaqa_btn qaqa_btn_white">
+                        </div>
+                        <div class="qaqaqa_btn">
+                            <input type="button" value="我不在意齒面光滑。" onclick="showIntro()" class="qaqa_btn lightGrayText" >
+                        </div>
+                    </div>
+                    <!-- 以上為點按第四題 -->
+
+                    <!-- 點按介紹 -->
+                    <div class="qa_item_des" id="qIntro">
+                        <h2 class="mb_h1 grayPink qa_title">專屬你的 Ora²</br>你最適合微觸感的軟性毛</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <p class="mb_h4 darkGray qa_des qa_des_intro">微觸感牙刷軟性毛，</br>
+                            將牙刷的刷毛孔徑變小、刷毛變長，</br>
+                            能夠深入清潔齒縫，不傷害牙齦，且刷出光滑齒面。
+                        </p>
+                    </div>
+
+                    <div class="pink_button" id="goFill">
+                        <input type="button" value="填寫資料送好禮" class="qa_btn " onclick="showInput()">
+                    </div>
+                    <div class="pink_button" id="goBtn">
+                        <input type="button" value="GO" class="qa_btn" onclick="showOne()">
+                    </div>
+                    <!-- 以上為介紹 -->
+
+                    <!-- 表單輸入 -->
+                    <div class="qa_item_input" id="qa_item_input">
+                        <div class="qa_item_des" >
+                            <h2 class="mb_h1 grayPink qa_title">專屬你的 Ora²</br>你最適合微觸感的軟性毛</h2>
+                            <div class="pink_line grayPinkbk"></div>
+                            <p class="darkGray qa_des qa_des_input">為了感謝大家的參與，Ora²準備了多項好禮！</br>
+                                記得留您的聯絡資料哦！</br>抽中大獎才能馬上聯絡您哦～
+                            </p>
+                        </div>
+                        <form action="request.php" id="form_input" method="POST">
+                            <div class="input_item">
+                                <span class="input_title grayPink">姓名:&nbsp</span>
+                                <input type="text" placeholder="小松菜奈" name="name"  required>
+                            </div>
+                            <div class="input_item">
+                                <span class="input_title grayPink">電話:&nbsp</span>
+                                <input type="mobile" placeholder="0912345678" name="tel" required pattern="/^[09]{2}[0-9]{8}$/">
+                            </div>
+                            <div class="input_item">
+                                <span class="input_title grayPink">Mail:&nbsp</span >
+                                <input type="email" placeholder="Ora²@Ora².com" name="email" required>
+                            </div>
+                            <div class="pink_button" id="submit_input">
+                                <input type="submit" value="送出資料" class="qa_btn " onclick="submit()" name="submit">
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- 以上為表單輸入 -->
+
+                    <!-- thank intro -->
+                    <div class="qa_item_des" id="thank_Intro">
+                        <h2 class="mb_h1 grayPink qa_title">感謝您的參與！</h2>
+                        <div class="pink_line grayPinkbk"></div>
+                        <p class="darkGray qa_des qa_des_thank">資料已經成功送出囉！</br>
+                            得獎名單將於 5/７公佈，</br>
+                            並以email通知得獎者哦！
+                        </p>
+                        <div class="pink_button">
+                            <a href="https://shop.cosmed.com.tw/v2/official/SalePageCategory/280614" target="_blank">
+                                <input type="button" value="各通路現正特價優惠中立即買" class="qa_btn qa_btn_thank" onclick="submit()">
+                            </a>
+                        </div>
+                        <div class="pink_button">
+                            <a href="#ig_wrap"></a>
+                            <input type="button" value="參加IG活動領取時尚獎項" class="dk_ig_Btn qa_btn_thank" onclick="submit()">
+                        </div>
+                        <p class="shop">販售通路：屈⾂⽒、康是美、寶雅、⽇藥本舖、Tomod's、松本清、台隆、家樂福、⼤潤發、全聯福利中⼼、各⼤量販、精品、百貨超市、藥局、網路</p>
+                    </div>
+                </div>
+                <div class="qa_girl" id="qa_girl">
+                    <img src="img/QA_People.png" alt="{">
+                </div>
+                <div id="brush">
+                    <img src="img/img1.png" alt="img1.png">
+                </div>
+                <div id="sale">
+                    <img src="img/sale.png" alt="">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- 第三屏產品介紹-->
+    <div class="product_wrap" id="product_wrap">
+        <div class="pro_bc pro_bc_top">
+            <img src="img/circle_yellow.png" alt="">
+        </div>
+        <div class="pro_item_des">
+            <h2 class="mb_h1 grayPink pro_title">專為女性誕生的牙刷</h2>
+            <div class="pink_line grayPinkbk pro_line"></div>
+        </div>
+        <div id="container">
+            <div id="list" class="list_flex">
+                <div class="pro_item" id="proOne" style="left: -100%;">
+                    <div class="pro_pic">
+                        <img src="img/img1.png" alt="">
+                    </div>
+                    <div class="pro_item_des pro_item_pad">
+                        <h2 class="mb_h2 center pro_head_after">微觸感牙刷&nbsp;<span class="pro_small darkGray">(超軟毛/軟性毛/中性毛)</span></h2>
+                        <span class="mb_h4 darkGray pro_des_left center" >＊全新加長柔軟刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊前端纖細多叉刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊齒面平滑光澤及齒間潔淨</span> 
+                    </div>
+                    <div class="pink_button">
+                        <input type="button" class="pro_btn" value="更多詳情" id="proOne">
+                    </div>  
+                </div>
+                <div class="pro_item" id="proTwo" style="left:0;" >
+                    <div class="pro_pic">
+                        <img src="img/img2.png" alt="">
+                    </div>
+                    <div class="pro_item_des pro_item_pad">
+                        <h2 class="mb_h2 center pro_head_after">微觸感牙刷&nbsp;<span class="pro_small darkGray">(超軟毛/軟性毛/中性毛)</span></h2>
+                        <span class="mb_h4 darkGray pro_des_left center" >＊全新加長柔軟刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊前端纖細多叉刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊齒面平滑光澤及齒間潔淨</span> 
+                    </div>
+                    <div class="pink_button">
+                        <input type="button" class="pro_btn" value="更多詳情" id="proTwo">
+                    </div>  
+                </div>
+                <div class="pro_item" id="proThree" style="left:100%;">
+                    <div class="pro_pic">
+                        <img src="img/img3.png" alt="">
+                    </div>
+                    <div class="pro_item_des pro_item_pad">
+                        <h2 class="mb_h2 center pro_head_after">微觸感牙刷&nbsp;<span class="pro_small darkGray">(超軟毛/軟性毛/中性毛)</span></h2>
+                        <span class="mb_h4 darkGray pro_des_left center" >＊全新加長柔軟刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊前端纖細多叉刷毛</span>
+                        <span class="mb_h4 darkGray pro_des_left center">＊齒面平滑光澤及齒間潔淨</span> 
+                    </div>
+                    <div class="pink_button">
+                        <input type="button" class="pro_btn" value="更多詳情" id="proThree">
+                    </div>  
+                </div>
+            </div>
+            <a href="javascript:;" class="arrow" id="next">
+                <img src="img/arrow_right.png" alt="">
+            </a>
+            <a href="javascript:;" class="arrow" id="prev">
+                <img src="img/arrow_left.png" alt="">
+            </a>
+            <div class="pro_bc pro_bc_bottom">
+                <img src="img/circle_blue.png" alt="">
+                <div class="pink_line"></div>
+                <div class="store-flex">
+                    <div class="store"></div>
+                    <div class="item-pic">
+                        <img src="img/" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--跳窗  -->
+        <div class="jump_wrap" id="jumpWrapOne">
+            <div class="close">
+                <img src="img/close_icon.png" alt="">
+            </div>
+            <div class="jump-flex">
+                <div class="jump_des">
+                    <h2 class="pc_h1 grayPink jump_title">Ora² me 微觸感牙刷</h2>
+                        <span class='pc_h4 jump_small'>(超軟毛/軟性毛/中性毛)</span>
+                    <div class="jump_line grayPinkbk"></div>
+                    <p class="pc_h3 darkGray jump_text">
+                        採用全新加長柔軟刷毛，不傷牙齦及牙齒。
+                        前端多叉纖細刷毛及孔徑變小，更能深入齒間清除齒垢，
+                        刷出齒面光滑。
+                    </p>
+                    <p class="store pc_h4 lightGrayText">販售通路：屈臣氏、康是美、寶雅、日藥本舖、Tomod‘s、松本清、台隆、家樂福、大潤發、全聯福利中心、各大量販、精品、百貨超市、藥局、網路</p>
+                </div>
+                <div class="jump-pic-flex">
+                    <div class="jump-pic-intro">
+                        <img src="img/product1_icon.png" alt="">
+                    </div>
+                    <div class="jump-pic-pro">
+                        <img src="img/img1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jump_wrap" id="jumpWrapTwo">
+            <div class="close">
+                <img src="img/close_icon.png" alt="">
+            </div>
+            <div class="jump-flex">
+                <div class="jump_des">
+                    <h2 class="pc_h1 grayPink jump_title">Ora² me 彈性動感牙刷</h2>
+                        <span class='pc_h4 jump_small'>(中性毛)</span>
+                    <div class="jump_line grayPinkbk"></div>
+                    <p class="pc_h3 darkGray jump_text">
+                        獨家研發的刷毛切割法與特殊Easy刷角的彈力刷毛，提升去除齒間髒污力,
+                        小刷頭設計，更易深入口腔與臼齒牙齒清潔。
+                    </p>
+                    <p class="store pc_h4 lightGrayText">販售通路：屈臣氏、康是美、寶雅、日藥本舖、Tomod‘s、松本清、台隆、家樂福、大潤發、全聯福利中心、各大量販、精品、百貨超市、藥局、網路</p>
+                </div>
+                <div class="jump-pic-flex">
+                    <div class="jump-pic-intro">
+                        <img src="img/product2_icon.png" alt="">
+                    </div>
+                    <div class="jump-pic-pro">
+                        <img src="img/img2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jump_wrap" id="jumpWrapThree">
+            <div class="close">
+                <img src="img/close_icon.png" alt="">
+            </div>
+            <div class="jump-flex">
+                <div class="jump_des">
+                    <h2 class="pc_h1 grayPink jump_title">Ora² me 淨白無瑕牙刷</h2>
+                        <span class='pc_h4 jump_small'>(軟毛/中性毛)</span>
+                    <div class="jump_line grayPinkbk"></div>
+                    <p class="pc_h3 darkGray jump_text">
+                        採用四角去漬刷毛緊貼齒面，雙重彈力材質刷毛刷毛，更容易輕鬆清除齒漬。
+                    </p>
+                    <p class="store pc_h4 lightGrayText">販售通路：屈臣氏、康是美、寶雅、日藥本舖、Tomod‘s、松本清、台隆、家樂福、大潤發、全聯福利中心、各大量販、精品、百貨超市、藥局、網路</p>
+                </div>
+                <div class="jump-pic-flex">
+                    <div class="jump-pic-intro">
+                        <img src="img/product3_icon.png" alt="">
+                    </div>
+                    <div class="jump-pic-pro">
+                        <img src="img/img3.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <!-- 以上為跳窗  -->
+    <!-- 以上為第三屏 -->
+
+    <!-- 第四屏影片屏 -->
+        <div class="video_wrap">
+            <div class="pro_item_des">
+                <h2 class="mb_h1 grayPink pro_title">Ora² me 時尚牙刷篇</h2>
+                <div class="pink_line grayPinkbk pro_line"></div>
+            </div>
+          <div class="video_container">
+                <div class="vi_bc vi_bc_top">
+                    <img src="img/circle_yellow.png" alt="">
+                </div>
+                <iframe src="https://www.youtube.com/embed/U_hbw7zTsBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="vi_bc vi_bc_bottom">
+                    <img src="img/circle_blue.png" alt="">
+                </div>
+            </div>
+        </div>
+    <!-- 以上為影片屏 -->
+
+    <!-- ig介紹屏 -->
+        <div class="ig_intro_wrap" id="ig_intro">
+            <div class="ig_bg">
+                <div class="ig_item_des">
+                    <h2 class="ig_title">Ora² me 超有型募集</h2>
+                    <div class="ig_line"></div>
+                    <p class=" ig_des">即日起至4/30(二)止，於Instagram，以貼文方式公開分享與Ora² me牙刷的時尚照，並於貼文內<span class="ig_blue">#Ora2me超有型、@Ora2_taiwan</span>。獲得最多愛心者，則有機會獲得<span class="ig_pink">Ora² me時尚獎項</span>！</p>
+                </div>
+            </div>
+        </div>   
+    <!-- 以上為ig介紹屏 -->
+
+    <!-- 第五屏ig屏 -->
+    <div id="ig_wrap">
+        <div class="pro_item_des">
+            <h2 class="mb_h1 grayPink pro_title">#Ora2me 超有型</h2>
+            <div class="pink_line grayPinkbk pro_line"></div>
+            <p class="ig_show_des darkGray">＊排列順序依上刊時間為主</p>
+        </div>
+        <div class="ig_container">
+            <div id="instagram-feed" class="instagram_feed"></div>
+        </div>
+    </div>
+    <!-- 以上為第五屏ig屏 -->
+
+
+    <!-- 活動注意事項 -->
+    <div class="wrap note_wrap">
+        <div class="des">
+            <h2>Ora² me齒白體驗 活動注意事項</h2>
+            <ul>
+                <li>得獎名單將於2019/5/7(二) 17:00公告於【妳的命定Ora² me】本活動網頁中。將以得獎者部分姓名及E-mail公告，得獎者將以E-mail訊息通知，若得獎者無法於2019/5/17(五) 23:59前回覆E-mail，則視同放棄資格。</li>
+                <li>主辦單位皆會以官方Ｅ-mail聯繫得獎者並提供領獎方法，得獎者需於通知中所載明之指定時間內以E-mail回覆領獎所需資料，並附上中華民國身分證正反面影本，以利完成後續相關作業，逾期回覆或未回覆者將視為放棄資格。</li>
+                <li>本活動抽獎獎項為
+                    <ul class="gift">
+                        <li>Ora² 限量牙刷乙支 － 80 份</li>
+                        <li>Ora² 限量版旅行組 － 20 份</li>
+                    </ul>
+                </li>
+                <li>得獎者需填妥得獎／中獎通知函（以下合稱中獎通知函）上資料，並將「中獎通知函紙本／身分證正反影本」以掛號方式寄回「Ora² 活動小組」（詳細寄件資訊及需提供資料將載於中獎通知函），若主辦單位未在2019/5/24(五)前（郵戳為憑，逾期無效）收到「中獎通知函紙本」，則視同得獎者主動放棄領獎資格。</li>
+                <li>得獎者倘為未成年人（未滿20歲），而抽中本活動之獎項者：（1）應於中獎通知信回函中，主動增加載明得獎者年齢及其為未成年人之原因及意旨；（2）連同得獎者與法定代理人之身分證正反面或其全戶戶口名簿之全部影本、以及此法定代理人確為得獎者之法定代理人之政府證明文件，一併以掛號方式寄回「Ora² 活動小組」（詳細寄件資訊及需提供資料將載於中獎通知函）。</li>
+                <li>若因得獎者登錄之E-mail阻擋中獎通知函，或將中獎通知函歸類為垃圾信件等任何非主辦單位可控原因，致使主辦單位無法於2019/5/24(五)前收到得獎者回寄之「中獎通知函紙本／身分證正反影本」，則亦視同得獎者主動放棄中獎資格。故得獎者若無收到中獎通知，請自行與主辦單位聯絡，以免錯失中獎權利。</li>
+                <li>若有不符本活動辦法之任何規定，或不願填寫或提供領獎相關資料，或填寫資料有誤、檢附資料不完整或未於指定期限內回覆，或有其他可歸責兌獎人事由，致無法核對兌獎人資料之情事等，一律視為自動放棄中獎資格。</li>
+                <li>本活動獎品以實物為準，無法指定顏色等任何獎品規格，得獎者亦不得要求折抵現金、退換、轉售或折換其他物品。主辦單位並保有修改或變更活動方式及更換活動獎品之權利。本活動獎品如遇有缺貨或不可抗力之因素無法提供時，主辦單位有權以其他等值商品替代。獎品規格以相關網站資料為準。</li>
+                <li>參加本活動者僅限設籍於台灣、澎湖、金門、馬祖地區，設籍其他地區者視為無效登錄資料，獎品寄送地址僅限於台澎金馬地區。</li>
+                <li>獎品發放後如有遺失、盜領或損毀，主辦單位恕不補發。得獎人在Ora²活動小組聯繫後，未於指定時間內完成相關領獎作業者（填妥領獎收據及檢附中獎人身分證正反面影本寄回Ora²活動小組），視同得獎人放棄獎品，其得獎資格將取消。主辦單位保留全權處理任何未頒發的獎品之權利，並保留以其他價值相當之獎品替代本活動原公佈獎項之權利，且無需通知或公布。</li>
+                <li>所有獎項之聯絡及寄送以得獎者於回覆時填寫之資料為準，參加者請務必確認資料正確，主辦單位不接受指定配送到達日期。若因資料填寫不實、不完整或不正確造成無法聯繫或無法寄送或寄送錯誤或遭拒絕受領，則視同放棄權益並自負其責，主辦單位不另行通知，主辦單位不接受得獎者變更聯絡住址或得獎者姓名，以避免產生冒領獎項之情況。</li>
+                <li>主辦單位有權檢視各活動參加者之活動參與行為及中獎情形是否涉嫌例：人為操作、蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為，活動參加者因上述情形所獲得之活動資格及獎項，主辦單位保有取消中獎資格的權利，並保留法律追訴權。若有違反常理或涉嫌不法之異常狀況者或有違反活動規範之行為，主辦單位保留變更、終止本活動及審核參加者參加活動資格之權利，如有違反著作權或侵害他人權利之法律責任自行負責，概與主辦單位無關。</li>
+                <li>主辦單位保有一切修改及取消本活動的權利而不作事前通知，亦有權對本活動之所有事宜作出解釋或裁決及變更活動獎品及辦法之權利，任何變更內容及其他詳細注意事項，則公佈於活動網站，並以其為準不另行通知。</li>
+                <li>活動相關問題，請聯絡Ora²活動小組，E-mail：service@sunnyville.com.tw，聯絡電話：(02)2551-9262分機：321。客服時間：週一至週五10:00-12:00、14:00-17:00，例假日及國定假日暫不提供服務。</li>
+                <li>以本活動參加方式參加抽獎之消費者，即同意遵守本活動之活動規定及主辦單位得於提供贈獎事宜之目的範圍內，蒐集、處理及利用個人資料。</li>  
+            </ul>
+            <h2>Ora² me齒白體驗 活動注意事項</h2>
+            <ul>
+                <li>得獎名單將於2019/5/7(二) 17:00公告於【妳的命定Ora² me】本活動網頁中。將以得獎者Instagram ID公告，得獎者將以Instagram訊息通知，若得獎者無法於2019/5/17(五) 23:59前回覆訊息及E-mail，讓主辦單位寄送領獎方法，則視同放棄資格。</li>
+                <li>主辦單位皆會以官方Instagram帳號（ora2_taiwan）聯繫得獎者並提供領獎方法，得獎者需於通知中所載明之指定時間內以E-mail回覆領獎所需資料，並附上中華民國身分證正反面影本，以利完成後續相關作業，逾期回覆或未回覆者將視為放棄資格。</li>
+                <li>主辦單位保有影片／圖片審核權，上傳之內容不得含有色情、暴力、血腥等違反社會善良風俗之不良內容，或是不符合參賽條件，則主辦單位有權將影片下架並取消參賽者獲獎資格。</li>
+                <li>本活動抽獎獎項為
+                    <ul class="gift">
+                        <li>新光三越禮卷3,000元－1份</li>
+                        <li>Ora²淨白清新漱口水-清爽薄荷80ml－10份</li>
+                        <li>Ora²限量牙刷三入組－8份</li>
+                    </ul>
+                </li>
+                <li>得獎者需填妥得獎／中獎通知函（以下合稱中獎通知函）上資料，並將「中獎通知函紙本／身分證正反影本」以掛號方式寄回「Ora² 活動小組」（詳細寄件資訊及需提供資料將載於中獎通知函），若主辦單位未在2019/5/24(五)前（郵戳為憑，逾期無效）收到「中獎通知函紙本」，則視同得獎者主動放棄領獎資格。</li>
+                <li>得獎者倘為未成年人（未滿20歲），而抽中本活動之獎項者：（1）應於中獎通知信回函中，主動增加載明得獎者年齢及其為未成年人之原因及意旨；（2）連同得獎者與法定代理人之身分證正反面或其全戶戶口名簿之全部影本、以及此法定代理人確為得獎者之法定代理人之政府證明文件，一併以掛號方式寄回「Ora² 活動小組」（詳細寄件資訊及需提供資料將載於中獎通知函）。</li>
+                <li>若因得獎者登錄之E-mail阻擋中獎通知函，或將中獎通知函歸類為垃圾信件等任何非主辦單位可控原因，致使主辦單位無法於2019/5/24(五)前前收到得獎者回寄之「中獎通知函紙本／身分證正反影本」，則亦視同得獎者主動放棄中獎資格。故得獎者若無收到中獎通知，請自行與主辦單位聯絡，以免錯失中獎權利。</li>
+                <li>若有不符本活動辦法之任何規定，或不願填寫或提供領獎相關資料，或填寫資料有誤、檢附資料不完整或未於指定期限內回覆，或有其他可歸責兌獎人事由，致無法核對兌獎人資料之情事等，一律視為自動放棄中獎資格。</li>
+                <li>本活動獎品以實物為準，無法指定顏色等任何獎品規格，得獎者亦不得要求折抵現金、退換、轉售或折換其他物品。主辦單位並保有修改或變更活動方式及更換活動獎品之權利。本活動獎品如遇有缺貨或不可抗力之因素無法提供時，主辦單位有權以其他等值商品替代。獎品規格以相關網站資料為準。</li>
+                <li>參加者同意無償授與活動單位一全球性、永久性、已付清授權金且不可撤回之使用權利，對於參加者（包含得獎人）上傳之活動參加影片、照片及參加者之Instagram基本資料（包括但不限於帳號等）（以下合稱「參加資料」），活動單位得在本活動及世界各地之行銷活動、宣傳活動、公益活動及相關之刊物、資料、建議書、宣傳品、手冊、網站或其他媒體（媒介）上，不限次數加以重製、編輯、改作、散布、公開傳輸、公開演出、公開發表、公開播送、公開上映、公開口述、引用或節錄，以及為任何必要之利用。</li>
+                <li>參加本活動者僅限設籍於台灣、澎湖、金門、馬祖地區，設籍其他地區者視為無效登錄資料，獎品寄送地址僅限於台澎金馬地區。</li>
+                <li>獎品發放後如有遺失、盜領或損毀，主辦單位恕不補發。得獎人在Ora²活動小組聯繫後，未於指定時間內完成相關領獎作業者（填妥領獎收據及檢附中獎人身分證正反面影本寄回Ora²活動小組），視同得獎人放棄獎品，其得獎資格將取消。主辦單位保留全權處理任何未頒發的獎品之權利，並保留以其他價值相當之獎品替代本活動原公佈獎項之權利，且無需通知或公布。</li>
+                <li>所有獎項之聯絡及寄送以得獎者於回覆時填寫之資料為準，參加者請務必確認資料正確，主辦單位不接受指定配送到達日期。若因資料填寫不實、不完整或不正確造成無法聯繫或無法寄送或寄送錯誤或遭拒絕受領，則視同放棄權益並自負其責，主辦單位不另行通知，主辦單位不接受得獎者變更聯絡住址或得獎者姓名，以避免產生冒領獎項之情況。</li>
+                <li>主辦單位有權檢視各活動參加者之活動參與行為及中獎情形是否涉嫌例：人為操作、蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為，活動參加者因上述情形所獲得之活動資格及獎項，主辦單位保有取消中獎資格的權利，並保留法律追訴權。若有違反常理或涉嫌不法之異常狀況者或有違反活動規範之行為，主辦單位保留變更、終止本活動及審核參加者參加活動資格之權利，如有違反著作權或侵害他人權利之法律責任自行負責，概與主辦單位無關。</li>
+                <li>主辦單位保有一切修改及取消本活動的權利而不作事前通知，亦有權對本活動之所有事宜作出解釋或裁決及變更活動獎品及辦法之權利，任何變更內容及其他詳細注意事項，則公佈於活動網站，並以其為準不另行通知。</li>
+                <li>活動相關問題，請聯絡Ora²活動小組，E-mail：service@sunnyville.com.tw，聯絡電話：(02)2551-9262分機：321。客服時間：週一至週五10:00-12:00、14:00-17:00，例假日及國定假日暫不提供服務。</li>
+                <li>以本活動參加方式參加抽獎之消費者，即同意遵守本活動之活動規定及主辦單位得於提供贈獎事宜之目的範圍內，蒐集、處理及利用個人資料。</li>
+            </ul>
+        </div>
+    </div>
+       
+   
+
+</body>
+<script>
+    // 呼叫IG API
+        (function($){
+        $(window).on('load', function(){
+            $.instagramFeed({
+                'username': 'instagram',
+                'container': "#instagram-feed",
+                'display_profile': true,
+                'display_biography': true,
+                'display_gallery': true,
+                'get_raw_json': false,
+                'callback': null,
+                'styling': true,
+                'items': 15,
+                'items_per_row': 3,
+                'margin': 1
+            });
+            $('.ig_container').on('click','#igbtn',function(){
+                $('.partTwo').css('display','block');
+                $('#igbtn').css('display','none');
+                $('#igbtnTwo').css('display','inline-block');
+            })
+            $('.ig_container').on('click','#igbtnTwo',function(){
+                $('.partThree').css('display','block');
+                $('#igbtnTwo').css('display','none');
+            })
+        });
+    })(jQuery);
+
+    
+    
+    
+    //跳窗
+   
+    // 開啟按鈕點擊事件
+    var probtn= document.getElementsByClassName('pro_btn');
+        for(let i=0;i<probtn.length;i++){
+            probtn[i].addEventListener('click',popUp);
+        }
+    //抓取跳窗背景層
+    var jumpLayer = document.querySelector('#jumpLayer');
+    //關閉按鈕點擊事件
+    var close = document.getElementsByClassName('close');
+        for(let i=0;i<close.length;i++){
+            close[i].addEventListener('click',closePopup);
+        }
+    //開啟方法
+    function popUp(e){
+        // stopBodyScroll(true);
+        jumpLayer.style.display = 'block';
+        jumpLayer.style.height = document.body.scrollHeight + 'px';
+        var jumpWrapOne = document.querySelector('#jumpWrapOne');
+        var jumpWrapTwo = document.querySelector('#jumpWrapTwo');
+        var jumpWrapThree = document.querySelector('#jumpWrapThree');
+        var btnId = e.target.id;
+        
+        if(btnId === 'proOne'){
+            jumpWrapOne.style.display = 'block';
+
+        }else if(btnId === 'proTwo'){
+            jumpWrapTwo.style.display = 'block';
+        }else{
+            jumpWrapThree.style.display = 'block';
+        }
+    }
+    //關閉方法
+    function closePopup(){
+        // stopBodyScroll(false);
+        jumpLayer.style.display='none';
+        var closeJump = document.getElementsByClassName('jump_wrap');
+        for(let i=0;i<closeJump.length;i++){
+            closeJump[i].style.display='none';
+        }
+    }
+  //控制背景鎖定(尚有bug未解)
+    // let bcbody = document.body;
+    // let pos = 0;
+    // function stopBodyScroll(isFixed){
+    //     if(isFixed){
+    //         pos = window.scrollY;
+    //         bcbody.style.position='fixed';
+    //         bcbody.style.top = -pos+'px';
+    //     }else{
+    //         bcbody.style.position='';
+    //         bcbody.style.top = '';
+    //         window.scroll(0,pos);
+            // window.scroll({'behavior':'auto','top':pos});
+            //尚需排除滑動
+    //     }    
+    // };
+  
+</script>
+
+</html>
+
+
+

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+/**CSS-style**/
+/**畫布大小*/
+    #container { 
+    margin:0 auto;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;/*超出畫布部分隱藏*/
+    position: relative;/*相對定位*/
+    cursor: pointer;
+    }
+    /**圖片容器*/
+    #list { 
+    width: 4200px;
+    height: 400px; 
+    position: absolute; 
+    z-index:1;
+    }
+    #list img { float: left; }
+    /**輪播選中按鈕樣式*/
+    #button { 
+    position: absolute; 
+    bottom: 25px; 
+    left: 175px; 
+    width: 250px; 
+    z-index: 2; 
+    }
+    #button ul li {
+    list-style: none;
+    width: 15px;
+    border-radius: 50%;
+    padding: 7.5px;
+    height: 15px;
+    margin-right: 10px;
+    background: green;
+    float: left;
+    font:15px/15px "microsoft yahei"; 
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    }
+    #button ul li.chos {
+    background: orange;
+    }
+    #container:hover .arrow{
+    display: block;
+    }
+    #pre {
+    left: 20px;
+    }
+    #next {
+    right: 20px;
+    }
+    /**pre next定位*/
+    .arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: black;
+    z-index: 3;
+    top: 180px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    font-size: 40px;
+    color: white;
+    opacity: 0.3;
+    filter: alpha(opacity=0.3);
+    display: none;
+    }
+    /**pre next按鈕透明度*/
+    #container a:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=0.7);
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div id="list" style="left:-600px">
+            <img src="img/img1.png">
+            <img src="img/img2.png">
+            <img src="img/img3.png">
+            <img src="img/1.png">
+            <img src="img/2.png">
+            <img src="img/3.png">
+            <img src="img/1.png">
+        </div>
+        <div id="button">
+        <ul>
+            <li index='1'>1</li>
+            <li index='2'>2</li>
+            <li index='3'>3</li>
+            <li index='4'>4</li>
+            <li index='5'>5</li>
+        </ul>
+        </div>
+        <a href="#" class="arrow" id="prev"><</a>
+        <a href="#" class="arrow" id="next">></a>
+    </div>
+</body>
+<script>
+   window.onload=function(){
+var container=document.getElementById('container');
+var list=document.getElementById('list');
+var buttons=document.getElementById('button').getElementsByTagName('li');
+var prev=document.getElementById('prev');
+var next=document.getElementById('next');
+var index=1;
+var interval=1000;
+var timer=null;
+var animated=false;
+//next
+next.onclick=function(){
+if (!animated) {
+animate(-600);
+};
+index =1;
+if (index>5) {
+index=1;
+};
+showButton();
+console.info('next' index);
+)}
+//prev
+prev.onclick=function(){
+if(!animated){
+animate(600);
+}
+index-=1;
+if(index<1){
+index=5;
+}
+showButton();
+console.info('prev' index);
+}
+//animate
+function animate(offset){
+animated=true;
+var left=parseInt(list.style.left) offset;
+var animateTime=600;//位移總時間
+var interval=10;//時間間隔
+var speed=offset/(animateTime/interval);//每次位移量
+var go=function(){//animate內部函式
+if ((speed<0 && parseInt(list.style.left)>left) || (speed>0 && parseInt(list.style.left)<left)) {//是否位移
+list.style.left=parseInt(list.style.left) speed 'px';
+setTimeout(go,interval)
+}else{
+list.style.left=left 'px';
+if (left<-3000) { //最後一張後面
+list.style.left=-600 'px'; //顯示前一張
+};
+if(left>-600){//第一張最前面
+list.style.left=-3000 'px';//顯示最後一張
+}
+animated=false;
+};
+}
+go(); 
+}
+//chos
+function showButton(){
+for (var i = 0; i < buttons.length; i  ) {
+buttons[i].className='';
+};
+buttons[index-1].className='chos';
+}
+//buttons-click
+for (var i = 0; i < buttons.length; i  ) {
+buttons[i].onclick=function(){
+if(this.className=='chos'){
+return;
+}
+var myIndex=parseInt(this.getAttribute('index'));
+var offset=(myIndex-index)*-600; //偏移量
+animate(offset);
+index=myIndex;//set Index
+showButton();
+}
+};
+function play(){
+timer=setTimeout(function(){
+next.click();
+play();
+},interval)
+}
+function stop(){
+clearInterval(timer);
+}
+play();
+container.onmouseover=function(){
+stop();
+}
+container.onmouseout=function(){
+play();
+}
+}
+
+
+
+</script>
+</html>

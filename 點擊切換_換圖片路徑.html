@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--轮播图-->
+    <div id="imageBack">
+        <img src="img/1.png" id="testImage" style="width: 400px;">
+    </div>
+    <!--手动控制按钮-->
+    <div id="buttonBack">
+        <button id="last" style="width: 200px;height: 40px">上一个</button>
+        <button id="next" style="width: 200px;height: 40px">下一个</button>
+    </div>
+    
+</body>
+<script>
+var currentImage = 1;   //从1开始
+var imageCount = 3;     //图片总数
+ 
+window.onload = function () {
+ 
+    //手动点击上一张
+    document.getElementById("last").addEventListener("click", function () {
+        if (currentImage > 1){
+            currentImage -- ;
+        } else if (currentImage = 1){
+            currentImage = imageCount;
+        }
+        handChangeImage();
+
+    }, false);
+    //手动点击下一张
+    document.getElementById("next").addEventListener("click", function () {
+        if (currentImage < imageCount){
+            currentImage ++ ;
+        } else if (currentImage = imageCount){
+            currentImage = 1;
+        }
+        handChangeImage();
+    }, false);
+ 
+    //2秒后执行
+    // setTimeout(selfChangeImage, 2000);
+};
+ 
+//手动控制上一张下一张
+function handChangeImage() {
+    var imageObj = document.getElementById("testImage");
+    imageObj.src = "img/"+ currentImage +".png";
+}
+ 
+//自动循环
+// function selfChangeImage() {
+//     if (currentImage < imageCount){
+//         currentImage ++ ;
+//     } else if (currentImage = imageCount){
+//         currentImage = 1;
+//     }
+ 
+//     var imageObj = document.getElementById("testImage");
+//     imageObj.src = "img/"+ currentImage +".png";
+ 
+    //2秒后执行
+//     setTimeout(selfChangeImage, 2000);
+// }
+
+</script>
+
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script type="text/javascript">
+        //onclick事件传入value值和id
+            function bt1(value, id) {
+            //判断点击的按钮的id是否存在,不存在则创建,存在则alert
+                if(!document.getElementById(id)) {
+                //创建input元素
+                    var inp = document.createElement("input");
+                    inp.type = "button";
+                    //传入点击按钮的value值到新的按钮
+                    inp.value = value;
+                    //传入点击按钮的id到新的按钮(传入是id+1防止重复)
+                    inp.id = id;
+                    //当方法有参数时，用onclick = 方法名(参数)时就有错了，需要在方法名前面加function()
+                    inp.onclick = function() {
+                        b1(id);
+                    };
+                    document.getElementById("div").appendChild(inp);
+                } else {
+                    alert("已存在")
+                }
+            }
+            function b1(id) {
+                var flag = confirm("确认删除?");
+                if(flag) {
+                    document.getElementById(id).remove();
+                }
+            }
+        </script>
+        <style type="text/css">
+            #div {
+                width: 600px;
+                height: 450px;
+                border: 1px solid black;
+            }
+            #div2 {
+                width: 600px;
+                height: 50px;
+                border: 1px solid black;
+            }
+            input {
+                margin-left: 21px;
+                width: 90px;
+                height: 45px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div"></div>
+
+        <div id="div2">
+            <input type="button" id="bt1" value="体育" onclick="bt1(this.value,this.id+1)" />
+            <input type="button" id="bt2" value="语文" onclick="bt1(this.value,this.id+1)" />
+            <input type="button" id="bt3" value="数学" onclick="bt1(this.value,this.id+1)" />
+            <input type="button" id="bt4" value="英语" onclick="bt1(this.value,this.id+1)" />
+            <input type="button" id="bt5" value="美术" onclick="bt1(this.value,this.id+1)" />
+        </div>
+    </body>
+</html>
+--------------------- 
+作者：Future_Master_L 
+来源：CSDN 
+原文：https://blog.csdn.net/weixin_40321535/article/details/78686526 
+版权声明：本文为博主原创文章，转载请附上博文链接！

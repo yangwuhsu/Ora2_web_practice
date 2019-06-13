@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            li {
+                display: none;
+                
+            }
+            li:nth-child(1) {
+                background-color: aqua;
+                display: block;
+            }
+        </style>
+</head>
+<body>
+        <ul>
+                <li>1111</li>
+                <li>2222</li>
+                <li>333</li>
+                <li>444</li>
+                <li>555</li>
+                <li>6666</li>
+            </ul>
+</body>
+<script>
+        const list = document.getElementsByTagName('ul')[0]
+        var item = list.getElementsByTagName('li')
+
+        function clickItem(e) {
+            for (let i = 0; i < item.length; i++) {
+                item[i].style.display = 'none';
+            }
+            if (this.value != 5) {
+                item[this.value + 1].style.display = 'block';
+            }
+        }
+        for (let i = 0; i < item.length; i++) {
+            item[i].value = i
+            item[i].addEventListener('click', clickItem)
+        }
+    </script>
+</html>
+
+   
+   
