@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <script src="slide.js"></script>
-    <script src="ig.js"></script>
     <script type="text/javascript" src="https://cdn.shurimages.com/js/libs/jquery.min.js"></script>
     <script type="text/javascript" src="jquery.instagramFeed.min.js"></script>
     <title>你的命定 Ora² me</title>
@@ -150,21 +149,22 @@
                                 記得留您的聯絡資料哦！</br>抽中大獎才能馬上聯絡您哦～
                             </p>
                         </div>
-                        <form action="request.php" id="form_input" method="POST">
+                        <form id="form_input" >
                             <div class="input_item">
                                 <span class="input_title grayPink">姓名:&nbsp</span>
-                                <input type="text" placeholder="小松菜奈" name="name"  required>
+                                <input type="text" id="userName"placeholder="小松菜奈" name="name"  required >
                             </div>
                             <div class="input_item">
                                 <span class="input_title grayPink">電話:&nbsp</span>
-                                <input type="mobile" placeholder="0912345678" name="tel" required pattern="/^[09]{2}[0-9]{8}$/">
-                            </div>
-                            <div class="input_item">
+                                <input type="tel" id="userTel"placeholder="0912345678" name="tel" required pattern="[09]{2}[0-9]{8}">
+            
+                            </div> 
+                             <div class="input_item">
                                 <span class="input_title grayPink">Mail:&nbsp</span >
-                                <input type="email" placeholder="Ora²@Ora².com" name="email" required>
-                            </div>
+                                <input type="email" id='userMail' placeholder="Ora²@Ora².com" name="email" required>
+                            </div> 
                             <div class="pink_button" id="submit_input">
-                                <input type="submit" value="送出資料" class="qa_btn " onclick="submit()" name="submit">
+                                <input type="submit" value="送出資料" class="qa_btn " name="submit" id="send">
                             </div>
                         </form>
                     </div>
@@ -185,8 +185,9 @@
                             </a>
                         </div>
                         <div class="pink_button">
-                            <a href="#ig_wrap"></a>
-                            <input type="button" value="參加IG活動領取時尚獎項" class="dk_ig_Btn qa_btn_thank" onclick="submit()">
+                            <a href="#ig_intro">
+                                <input type="button" value="參加IG活動領取時尚獎項" class="dk_ig_Btn qa_btn_thank">
+                            </a>
                         </div>
                         <p class="shop">販售通路：屈⾂⽒、康是美、寶雅、⽇藥本舖、Tomod's、松本清、台隆、家樂福、⼤潤發、全聯福利中⼼、各⼤量販、精品、百貨超市、藥局、網路</p>
                     </div>
@@ -266,13 +267,6 @@
             </a>
             <div class="pro_bc pro_bc_bottom">
                 <img src="img/circle_blue.png" alt="">
-                <div class="pink_line"></div>
-                <div class="store-flex">
-                    <div class="store"></div>
-                    <div class="item-pic">
-                        <img src="img/" alt="">
-                    </div>
-                </div>
             </div>
         </div>
         <!--跳窗  -->
@@ -357,6 +351,8 @@
     </div>
     <!-- 以上為跳窗  -->
     <!-- 以上為第三屏 -->
+
+   
 
     <!-- 第四屏影片屏 -->
         <div class="video_wrap">
@@ -456,8 +452,7 @@
             </ul>
         </div>
     </div>
-       
-   
+        
 
 </body>
 <script>
@@ -550,8 +545,31 @@
             //尚需排除滑動
     //     }    
     // };
+
+
+    ////////表單寫進資料庫///////////
+    $("#form_input").on("submit",function(){
+        $.ajax({
+            type:'POST',
+            url:'request.php',
+            data:{
+                'name':$('#userName').val(),
+                'tel':$('#userTel').val(),
+                'mail':$('#userMail').val()
+            },
+            dataType:'html',
+            success:function(){
+                document.getElementById('submit_input').style.display = 'none';
+                document.getElementById('qa_item_input').style.display = 'none';
+                document.getElementById('thank_Intro').style.display = 'block';
+            },
+        });
+        return false;
+    })
   
 </script>
+
+
 
 </html>
 

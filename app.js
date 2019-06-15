@@ -34,10 +34,6 @@ function showInput(){
     document.getElementById('submit_input').style.display = 'block';
 }
 
-function submit(){
-    document.getElementById('submit_input').style.display = 'none';
-    document.getElementById('qa_item_input').style.display = 'none';
-    document.getElementById('thank_Intro').style.display = 'block';
-}
+
 
 
