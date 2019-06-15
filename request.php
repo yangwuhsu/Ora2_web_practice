@@ -1,7 +1,6 @@
 <?php
 $host = 'localhost';
-$dbuser = 'salesfro_fu';
-$dbpw = 'Hpxwi37Gd2hC9Ng';
+
 $dbname = 'salesfro_test';
 $link = mysqli_connect($host,$dbuser,$dbpw,$dbname);
 $name = $_POST['name'];
